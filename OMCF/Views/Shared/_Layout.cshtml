@@ -1,0 +1,168 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<style>#para,#time  {color:white;}</style>
+
+    <title>@ViewBag.Title - OMCF</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../bootstrap/vendor/jquery/jquery.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/css/half-slider.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var fxn = function () {
+            var time = (new Date).toTimeString().slice(0, 8);
+            document.getElementById('time').innerHTML = time;
+        }
+            setInterval(fxn, 1000);
+  </script>
+
+    <link rel="icon"
+          type="image/png"
+          href="~/fav.png"> 
+    <style>
+        .jumbotron{
+background-color: #E8ECEF;
+        }
+
+	#mapholder{    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;}
+    </style>
+</head>
+
+<body>
+@if (User.Identity.Name == "SEATTLE\\ddouglas" || User.Identity.Name == "SEATTLE\\pjohnson" || User.Identity.Name == "SEATTLE\\fmedina" || User.Identity.Name == "SEATTLE\\jsanghera" || User.Identity.Name == "SEATTLE\\jorr" || User.Identity.Name == "SEATTLE\\abachand") { 
+    <!-- Navigation --> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+ <p id="para">
+     @User.Identity.Name <br>
+@DateTime.Now.ToString("M/d/yyyy") |
+<b id="time">
+<script>
+var time = (new Date).toTimeString().slice(0,8);
+document.getElementById('time').innerHTML = time;
+</script>
+</b>
+</p>
+        <div class="container">
+            <a class="navbar-brand" href="~/Home">  <img src="~/rui.png" alt="RUI Icon" /> RUI - OMCF</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+  <div class="dropdown">                    
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Request
+ changes  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="~/Home/CreateRequest">Menu Items</a></li>
+    <li><a href="~/Home/MealPeriodRequest">Holiday Meal Period</a></li>
+  </ul>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="~/Home/ApproveTheRequests">
+                            Approve Requests
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/ManageCodes">Manage App</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/ReviewRequest">Review Open Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/SearchRequest">Search Request</a>
+                    </li>
+                        <a class="nav-link" href="~/Home/Instructions">Instructions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Statistics">Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/FAQ">FAQ</a>
+                    </li>
+              
+                </ul>
+            </div>
+        </div>
+    </nav>}
+else
+{
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+ <p id="para">
+     @User.Identity.Name <br>
+@DateTime.Now.ToString("M/d/yyyy") |
+<b id="time">
+<script>
+var time = (new Date).toTimeString().slice(0,8);
+document.getElementById('time').innerHTML = time;
+</script>
+</b>
+</p>
+        <div class="container">
+            <a class="navbar-brand" href="~/Home">  <img src="~/rui.png" alt="RUI Icon" /> RUI - OMCF</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+          <div class="dropdown">                    
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Request changes
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="~/Home/CreateRequest">Menu Items</a></li>
+    <li><a href="~/Home/MealPeriodRequest">Holiday Meal Period</a></li>
+  </ul>
+</div>
+                    <li class="nav-item"> <li class="nav-item">
+                        <a class="nav-link" href="~/Home/ReviewRequest">Review Open Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/SearchRequest">Search Request</a>
+                    </li>
+                    <a class="nav-link" href="~/Home/Instructions">Instructions</a>
+                    </li>
+            
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/FAQ">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+}
+
+    <div class="container body-content">
+        <hr />
+        <br />
+        @RenderBody()
+    </div>
+<footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white"> Copyright @DateTime.Now.Year Restaurants Unlimited. <br> <a href="https://www.r-u-i.com/">Leave OMCF</a></p><br>
+        </div>
+        <!-- /.container -->
+    </footer>
+</body>
+</html>

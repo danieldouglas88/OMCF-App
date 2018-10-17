@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+} 
+
+<script>
+function showNotePad() {
+    var myWindow = window.open("NotePad.aspx", "", "width=650,height=725");
+}
+</script>
+
+<br />
+<div class="jumbotron">
+    <center><h1>Restaurants Unlimited: OMCF</h1> </center>
+    <hr />
+    <center> <p class="lead">You are using Restaurant Unlimited's OMCF system which allows you to request menu changes, look up previous requests, et al. Below are descriptions for each respective page on OMCF.</p></center>
+<hr>
+<center>
+<div class="card border-primary mb-3" style="max-width: 30rem;">
+  <div class="card-header">INSIDE RUI</div>
+  <div class="card-body">
+    <h4 class="card-title">Search Inside RUI for: </h4>
+<form action="http://insiderui/SearchCenter/Pages/results.aspx?">
+  <input type="text" name="k">
+  <br><br>
+  <input type="submit" class="btn btn-primary btn-lg" formtarget="_blank" value="Submit">
+</form> 
+  </div>
+</div>
+</center>
+<hr>
+    <form>
+        <button type="submit" value="menu item requests" class="btn btn-primary btn-lg btn-block" onclick="showNotePad()">Save your notes with OMCF's NotePad tool</button>
+    </form>
+
+
+
+<hr>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Home Page</h3>
+        <p>
+            This is where you're at right now, and it just summarizes this app's components. 
+        </p>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Review Open Requests</h3>
+        <p>This section allows you to look at open requests that you started but did not finalize. </p>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Search Request</h3>
+        <p>This section allows you to generate past requests by user or restaurant, and provides details about each request.</p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Create Request</h3>
+        <p>
+            In this section, you're able to make various requests, including meal period and menu change requests.
+        </p>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Instructions</h3>
+        <p>This section details the instructions that govern this OMCF application. </p>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Frequently Asked Questions</h3>
+        <p>Here is where common questions are answered that pertain to this application.</p>
+    </div>
+</div>
+<hr />

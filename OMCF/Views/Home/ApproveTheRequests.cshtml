@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Approve Requests";
+}
+
+<link rel="stylesheet" href="~/Content/style.css">
+<br>
+<div class="jumbotron">
+    <center><h1>@ViewBag.Title</h1> </center>
+    <hr />
+    <center>
+        <p class="lead">
+            You are using Restaurant Unlimited's OMCF system. Click on the logo at the top left to see a summary of this application's different components.
+        </p>
+    </center>
+
+    <form action="~/Home/ApproveRequests">
+        <button type="submit" value="menu item requests" class="btn btn-primary btn-lg btn-block">Approve MENU ITEM Changes</button>
+    </form>
+    <br>
+
+    <form action="~/Home/MealPeriodApprove">
+        <button type="submit" value="meal period requests" class="btn btn-primary btn-lg btn-block">Approve MEAL PERIOD Changes</button>
+    </form>
+
+
+
+</div>
+<hr />

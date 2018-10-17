@@ -1,0 +1,23 @@
+﻿h5:hover {
+      color: steelblue;
+  }
+
+.lead, h1 {
+    align-content: center;
+}
+
+.responsive-object {
+  position: relative;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.responsive-object object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
